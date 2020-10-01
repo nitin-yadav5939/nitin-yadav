@@ -1,3 +1,6 @@
+# Author :- Nitin yadav
+# Language :- Python
+# product :- Artifical Assistance
 import pyttsx3
 import speech_recognition as sr
 import datetime
