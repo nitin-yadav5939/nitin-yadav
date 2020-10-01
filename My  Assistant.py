@@ -8,6 +8,7 @@ import wikipedia
 import webbrowser
 import os
 import smtplib
+import random
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -59,6 +60,18 @@ def sendEmail(to, content):
     server.login('nitinyadav9395@gmail.com', 'Nitin@9395')
     server.sendmail('nitinyadav9395@gmail.com', to, content)
     server.close()
+    
+#Here is somethinf to light the mood
+def joke():
+    joknum=random.randint(0,1)
+    if joknum==0:
+        speak("this is the funniest joke. okay hold your seat")
+        speak("Your life is a joke,Boom!")
+    elif joknum==1:
+        speak("This one is a PJ what we call to an obedient table  ")
+        speak("Timetable Ha ha ha")
+    else:
+        exit()    
 
 if __name__ == '__main__':
     wishMe()
@@ -81,6 +94,9 @@ if __name__ == '__main__':
             webbrowser.open("tutorialspoint.com")
         elif 'open youtube' in query:
             webbrowser.open("youtube.com")
+        elif 'joke' in query:
+            speak("Ohh! you want me to be funny ")
+            joke()    
         elif 'play music' in query:
             music_dir = 'C:\\Users\\NITIN\\Documents'
             songs = os.listdir(music_dir)
